@@ -19,11 +19,11 @@ namespace Mvc.JQuery.Datatables
         public DataTablesResult(IQueryable<T> q, DataTablesParam dataTableParam, Func<T, TRes> transform) 
         {
             _transform = transform;
-            var properties = typeof(T).GetProperties();
+            var properties = typeof(TRes).GetProperties();
 
             var content = GetResults(q, dataTableParam, properties.Select(p => Tuple.Create(p.Name, p.PropertyType)).ToArray());
             this.Data = content;
-            this.JsonRequestBehavior = JsonRequestBehavior.DenyGet;
+            this.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
         }
 
 

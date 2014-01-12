@@ -50,8 +50,8 @@ namespace Mvc.JQuery.Datatables
 
             totalRecordsDisplay = data.Count();
 
-            data = data.OrderBy(sortString);
-            data = data.Skip(DTParams.iDisplayStart).Take(DTParams.iDisplayLength);
+        //    data = data.OrderBy(sortString);
+       //     data = data.Skip(DTParams.iDisplayStart).Take(DTParams.iDisplayLength);
 
             return data;
         }
